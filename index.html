@@ -3,106 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>$WWIII – Meme Airdrop</title>
-  <style>
-    body {
-      font-family: "Roboto", sans-serif;
-      background: #121212;
-      color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header {
-      background: #b80000;
-      padding: 20px;
-      font-size: 1.8em;
-    }
-    .container {
-      padding: 20px;
-    }
-    .card {
-      background: #1e1e1e;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px #000;
-    }
-    #tap-btn {
-      background: #e53935;
-      border: none;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.1s ease;
-    }
-    #tap-btn:active {
-      transform: scale(0.96);
-      background: #b71c1c;
-    }
-    .stats {
-      font-size: 1.1em;
-      margin-top: 10px;
-    }
-    .referral {
-      margin-top: 15px;
-      font-size: 0.95em;
-      opacity: 0.8;
-    }
-  </style>
+  <title>WWIII Coin</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/css.gg/icons/all.css" rel="stylesheet" />
 </head>
 <body>
-
-  <header>💣 $WWIII Airdrop Arena</header>
-
-  <div class="container">
-    <div class="card">
-      <div><strong>@رضى</strong></div>
-      <div class="stats">🔥 نقاطك: <span id="points">0</span></div>
-      <button id="tap-btn">🫳 انقر لكسب نقطة</button>
+  <!-- الشريط العلوي -->
+  <header class="top-bar">
+    <div class="wallet-box">
+      <span>Wallet</span>
     </div>
+  </header>
 
-    <div class="card">
-      <div>رابط الدعوة:</div>
-      <div class="referral" id="ref-link">https://wwiii.to/join/رضى</div>
-      <button onclick="copyReferral()">📋 نسخ الرابط</button>
-    </div>
+  <!-- عداد النقاط -->
+  <div class="points-section">
+    <label>Points</label>
+    <div id="counter">108</div>
   </div>
 
-  <script>
-    // Load initial points
-    let points = parseInt(localStorage.getItem('wwiii_points')) || 0;
-    const pointsEl = document.getElementById("points");
-    const tapBtn = document.getElementById("tap-btn");
+  <!-- الصاروخ -->
+  <div class="rocket-container">
+    <img src="rocket.png" id="rocket" alt="Rocket" onclick="tapRocket()" />
+  </div>
 
-    pointsEl.textContent = points;
+  <!-- الشريط السفلي -->
+  <footer class="tab-bar">
+  <div class="tab active">
+    <i class="gg-home"></i>
+    <span>Home</span>
+  </div>
+  <div class="tab">
+    <i class="gg-check-o"></i>
+    <span>Tasks</span>
+  </div>
+  <div class="tab">
+    <i class="gg-trophy"></i>
+    <span>Rank</span>
+  </div>
+  <div class="tab">
+    <i class="gg-link"></i>
+    <span>Refer</span>
+  </div>
+  <div class="tab">
+    <i class="gg-user"></i>
+    <span>Profile</span>
+  </div>
+</footer>
 
-    tapBtn.addEventListener("click", () => {
-      points++;
-      pointsEl.textContent = points;
-      localStorage.setItem('wwiii_points', points);
-      tapBtn.textContent = randomTapMessage();
-    });
-
-    function randomTapMessage() {
-      const messages = [
-        "💥 ضربة نووية ناجحة!",
-        "🪖 جندي جديد في المعركة!",
-        "🔥 تم قصف الهدف!",
-        "📈 ازدهار الرعب!",
-        "💣 أُطلقت قنبلة MEME!"
-      ];
-      return messages[Math.floor(Math.random() * messages.length)];
-    }
-
-    function copyReferral() {
-      const link = document.getElementById("ref-link").textContent;
-      navigator.clipboard.writeText(link);
-      alert("تم نسخ رابط الدعوة ✅");
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
