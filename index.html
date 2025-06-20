@@ -43,16 +43,15 @@
   <div id="countdown">Loading countdown...</div>
 
   <div class="section">
-    <div>📊 Total wallets registered: <strong>452</strong></div> <!-- عدّل الرقم يدويًا أو اربطه لاحقًا -->
+    <div>📊 Total wallets registered: <strong>452</strong></div>
   </div>
 
   <div class="section">
     <a class="btn" onclick="register()">📝 Register Wallet</a>
-    <a class="btn" href="https://stripchat.com" target="_blank">💰 Buy Now</a>
+    <a class="btn" href="https://stripchat.com" target="_blank">🌐 Visit Website</a>
   </div>
 
   <script>
-    // عداد الإطلاق
     const launch = new Date("2025-07-15T00:00:00").getTime();
     setInterval(() => {
       const now = Date.now();
@@ -68,9 +67,8 @@
       document.getElementById("countdown").innerText = `${d}d ${h}h ${m}m ${s}s`;
     }, 1000);
 
-    // تسجيل المحفظة (مجرد مثال لتفعيل WebApp)
     function register() {
-      Telegram.WebApp.sendData("register_request"); // يرسل للبوت نص register_request
+      Telegram.WebApp.sendData("register_request");
       Telegram.WebApp.close();
     }
   </script>
