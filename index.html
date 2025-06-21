@@ -24,20 +24,25 @@
       <div id="auto-status">Inactive! Tap the rocket to start</div>
       <div id="click-status"></div>
     </div>
-
+<div id="boost-status" style="display: none;"> Boost 2 Active for 6h</div>
     <div class="rocket-container" onclick="tapRocket()">
       <img src="rocket.png" id="rocket" alt="Rocket" />
     </div>
+    <div class="boost-buttons">
+  <button onclick="activateBoostByPoints(this)">🚀 Boost ×2 (10 Points)</button>
+  <button onclick="activateBoostByAd(this)">🚀 Boost ×2 (Watch Ad)</button>
+</div>
+    
   </div>
 
   <!-- Tasks Section -->  	
   <div id="tasks-section" style="display: none;">
-  	<h2 class="tasks-title">🎯 Earn More</h2>
+  	<h2 class="tasks-title"> Earn More</h2>
   <p class="tasks-subtitle">Complete tasks and earn extra points</p>
     <div class="task-list">
     	<div class="task-item">
   <div class="task-info">
-    <h3>🐦 Follow our X account</h3>
+    <h3> Follow our X account</h3>
     <p>Reward: +5 points</p>
   </div>
   <a href="https://x.com/yourusername" target="_blank">
@@ -47,7 +52,7 @@
 
 <div class="task-item">
   <div class="task-info">
-    <h3>📢 Join our Telegram channel</h3>
+    <h3> Join our Telegram channel</h3>
     <p>Reward: +5 points</p>
   </div>
   <a href="https://t.me/yourchannel" target="_blank">
@@ -57,7 +62,7 @@
 
 <div class="task-item">
   <div class="task-info">
-    <h3>🔁 Repost our X post</h3>
+    <h3> Repost our X post</h3>
     <p>Reward: +8 points</p>
   </div>
   <a href="https://x.com/yourpost" target="_blank">
@@ -66,7 +71,7 @@
 </div>
       <div class="task-item">
         <div class="task-info">
-          <h3>👀 Watch a short video</h3>
+          <h3> Watch a short video</h3>
           <p>Reward: +5 points</p>
         </div>
         <button class="task-btn" onclick="claimTask(this, 5)">Claim</button>
@@ -74,7 +79,7 @@
 
       <div class="task-item locked">
         <div class="task-info">
-          <h3>📩 Invite 3 friends</h3>
+          <h3> Invite 3 friends</h3>
           <p>Reward: +10 points</p>
         </div>
         <button class="task-btn" disabled>Locked</button>
@@ -86,27 +91,27 @@
   
   <!-- Rank Section -->
  <div id="rank-section" style="display: none;">
-  <h2 class="rank-title">🏆 Top Players</h2>
+  <h2 class="rank-title"> Top Players</h2>
 
   <div class="podium">
   <!-- ثاني -->
   <div class="rank-box second">
-    <div class="avatar">🥈</div>
+    <div class="avatar"></div>
     <div class="name">CryptoNinja</div>
     <div class="points">980 pts</div>
   </div>
 
   <!-- أول -->
   <div class="rank-box first">
-    <div class="crown">👑</div>
-    <div class="avatar">🥇</div>
+    <div class="crown"></div>
+    <div class="avatar"></div>
     <div class="name">RocketMaster</div>
     <div class="points">1020 pts</div>
   </div>
 
   <!-- ثالث -->
   <div class="rank-box third">
-    <div class="avatar">🥉</div>
+    <div class="avatar"></div>
     <div class="name">PixelWolf</div>
     <div class="points">950 pts</div>
   </div>
@@ -122,9 +127,9 @@
     <li><span class="place">#10</span><span class="name">TokenTyphoon</span><span class="points">700 pts</span></li>
 
 <li class="gap-placeholder">
-  <span class="place">⋯</span>
+  <span class="place"></span>
   <span class="name">Players between</span>
-  <span class="points">⋯</span>
+  <span class="points"></span>
 </li>
 <li class="selected-player">
   <span class="place">#27</span>
@@ -137,14 +142,14 @@
 
 <!-- Refer Section -->
 <div id="refer-section" style="display: none;">
-  <h2 class="refer-title">🤝 Invite & Earn</h2>
+  <h2 class="refer-title"> Invite & Earn</h2>
 
   <div class="invite-box">
     <p class="refer-desc">Share your personal invite link and earn 20 points for every friend who joins.</p>
 
     <div class="refer-link-box">
       <input type="text" id="refer-link" readonly value="https://yourapp.com/invite?ref=ridha123" />
-      <button onclick="copyReferLink()">📋 Copy</button>
+      <button onclick="copyReferLink()"> Copy</button>
     </div>
 
     <p class="ref-count">Referrals: <strong>7</strong></p>
@@ -154,7 +159,7 @@
   <div class="referral-list">
     <h3 class="referral-title">Your Referrals</h3>
     <ul>
-      <li><span class="name">🔥 CryptoNinja</span><span class="points">320 pts</span></li>
+      <li><span class="name"> CryptoNinja</span><span class="points">320 pts</span></li>
       <li><span class="name">MetaWolf</span><span class="points">245 pts</span></li>
       <li><span class="name">XCaptain</span><span class="points">180 pts</span></li>
       <li><span class="name">PixelFox</span><span class="points">160 pts</span></li>
@@ -190,7 +195,7 @@
       <span class="level-indicator">Lv. 13</span>
     </div>
 
-    <h4 class="records-title">🎮 Your Records</h4>
+    <h4 class="records-title"> Your Records</h4>
     <div class="record">
       <div class="game-name">Tap Rocket</div>
       <div class="record-details">
