@@ -10,8 +10,9 @@ let elapsedSeconds = 0;
 const maxDuration = 6 * 60 * 60;
 const generationRate = 0.001;
 
-let boostActive = false;
 let boostMultiplier = 1;
+let boostActive = false;
+let boostEndTime = null;
 
 function formatTime(s) {
   const h = Math.floor(s / 3600);
@@ -50,6 +51,22 @@ function updateDisplay() {
   autoEl.textContent = isActive
     ? `Active: ${formatTime(maxDuration - elapsedSeconds)} remaining`
     : `Inactive  Tap the rocket to start`;
+
+  // إظهار أو إخفاء حالة البوست
+  const status = document.getElementById("boost-status");
+  if (boostActive && boostEndTime) {
+    const remaining = boostEndTime - Date.now();
+    if (remaining > 0 && status) {
+      const hours = Math.floor(remaining / 3600000);
+      const minutes = Math.floor((remaining % 3600000) / 60000);
+      status.textContent = ` Boost Active for  ${hours}h ${minutes}m`;
+      status.style.display = "block";
+    } else if (status) {
+      status.style.display = "none";
+    }
+  } else if (status) {
+    status.style.display = "none";
+  }
 }
 
 function tapRocket() {
@@ -84,6 +101,24 @@ function showTapPlus(text) {
 setInterval(() => {
   if (isActive) {
     if (elapsedSeconds < maxDuration) {
+      const now = Date.now();
+
+      // انتهاء البوست
+      if (boostActive && boostEndTime && now >= boostEndTime) {
+        boostMultiplier = 1;
+        boostActive = false;
+        boostEndTime = null;
+        showToast("🔋 Boost expired");
+
+        // إزالة تأثير الشعلة من الزر
+        const activeBtn = document.querySelector(".active-boost");
+        if (activeBtn) activeBtn.classList.remove("active-boost");
+
+        // إزالة الشعلة عن الصاروخ
+        const rocket = document.querySelector("#rocket");
+        if (rocket) rocket.classList.remove("rocket-boosted");
+      }
+
       const boostRate = generationRate * boostMultiplier;
       points += boostRate;
       elapsedSeconds++;
@@ -95,6 +130,59 @@ setInterval(() => {
   updateDisplay();
 }, 1000);
 
+function activateBoost(source, button) {
+  if (boostActive) {
+    showToast("🚀 Already active");
+    return;
+  }
+
+  boostMultiplier = 2;
+  boostActive = true;
+  boostEndTime = Date.now() + 6 * 60 * 60 * 1000;
+
+  const rocket = document.querySelector("#rocket");
+  if (rocket) {
+    rocket.classList.add("fly");
+    rocket.classList.add("rocket-boosted"); // 🌟 أضفنا تأثير الشعلة على الصاروخ
+    setTimeout(() => rocket.classList.remove("fly"), 1000);
+  }
+
+  if (button) {
+    button.classList.add("active-boost"); // 🔥 شعلة الزر
+  }
+
+  showToast("🚀 Boost activated");
+  updateDisplay();
+}
+
+function activateBoostByPoints(button) {
+  if (boostActive) {
+    showToast(" Already active");
+    return;
+  }
+
+  if (points < 10) {
+    showToast(" No enough points");
+    return;
+  }
+
+  points -= 10;
+  updateDisplay();
+  activateBoost("Points", button);
+}
+
+function activateBoostByAd(button) {
+  if (boostActive) {
+    showToast(" Already active");
+    return;
+  }
+
+  window.open("https://youradlink.com", "_blank");
+
+  setTimeout(() => {
+    activateBoost("Ad", button);
+  }, 15000);
+}
 
 function claimTask(button, reward) {
   button.disabled = true;
@@ -110,14 +198,14 @@ function toggleTasks() {
 }
 
 function showTab(tabName) {
-  // عرض القسم المطلوب
   const sections = ["home-section", "tasks-section", "rank-section", "refer-section", "profile-section"];
   sections.forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.style.display = id === `${tabName}-section` ? "block" : "none";
+    if (el) {
+      el.style.display = id === `${tabName}-section` ? "block" : "none";
+    }
   });
 
-  // تحديث التبويبات
   const tabs = document.querySelectorAll(".tab");
   tabs.forEach(tab => {
     const tabNameAttr = tab.dataset.tab;
@@ -125,9 +213,21 @@ function showTab(tabName) {
   });
 }
 
+window.addEventListener("DOMContentLoaded", () => {
+  showTab("home");
+});
+
 function copyReferLink() {
   const input = document.getElementById("refer-link");
   input.select();
   document.execCommand("copy");
-  alert("Referral link copied!");
+  showToast("Referral link copied!");
+}
+
+function showToast(message) {
+  let toast = document.createElement("div");
+  toast.className = "toast-message";
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 2000);
 }
