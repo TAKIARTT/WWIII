@@ -53,7 +53,7 @@ function updateDisplay() {
     ? `Active: ${formatTime(maxDuration - elapsedSeconds)} remaining`
     : `Inactive  Tap the rocket to start`;
 
-  // ≈ÿÁ«— √Ë ≈Œ·«¡ Õ«‰… «‰»Ë” 
+  // √Ö√ò√ß√á√ë √É√® √Ö√é√°√á√Å √ç√á√§√â √á√§√à√®√ì√ä
   const status = document.getElementById("boost-status");
   if (boostActive && boostEndTime) {
     const remaining = boostEndTime - Date.now();
@@ -105,18 +105,18 @@ setInterval(() => {
     if (elapsedSeconds < maxDuration) {
       const now = Date.now();
 
-      // «Ê Á«¡ «‰»Ë” 
+      // √á√¶√ä√ß√á√Å √á√§√à√®√ì√ä
       if (boostActive && boostEndTime && now >= boostEndTime) {
         boostMultiplier = 1;
         boostActive = false;
         boostEndTime = null;
         showToast(" Boost expired");
 
-        // ≈“«‰…  √ÀÍ— «‰‘Ÿ‰… ÂÊ «‰“—
+        // √Ö√í√á√§√â √ä√É√ã√™√ë √á√§√î√ô√§√â √•√¶ √á√§√í√ë
         const activeBtn = document.querySelector(".active-boost");
         if (activeBtn) activeBtn.classList.remove("active-boost");
 
-        // ≈“«‰… «‰‘Ÿ‰… ŸÊ «‰’«—ËŒ
+        // √Ö√í√á√§√â √á√§√î√ô√§√â √ô√¶ √á√§√ï√á√ë√®√é
         const rocket = document.querySelector("#rocket");
         if (rocket) rocket.classList.remove("rocket-boosted");
       }
@@ -145,12 +145,12 @@ function activateBoost(source, button) {
   const rocket = document.querySelector("#rocket");
   if (rocket) {
     rocket.classList.add("fly");
-    rocket.classList.add("rocket-boosted"); //  √÷·Ê«  √ÀÍ— «‰‘Ÿ‰… Ÿ‰È «‰’«—ËŒ
+    rocket.classList.add("rocket-boosted"); //  √É√ñ√°√¶√á √ä√É√ã√™√ë √á√§√î√ô√§√â √ô√§√© √á√§√ï√á√ë√®√é
     setTimeout(() => rocket.classList.remove("fly"), 1000);
   }
 
   if (button) {
-    button.classList.add("active-boost"); //  ‘Ÿ‰… «‰“—
+    button.classList.add("active-boost"); //  √î√ô√§√â √á√§√í√ë
   }
 
   showToast(" Boost activated");
@@ -253,7 +253,7 @@ function showDailyPopup(streak, reward) {
 
     if (i === streak - 1) card.classList.add("active");
 
-    // ≈–« «‰Â„«·√… ‰Á–« «‰ÍËÂ  Â «” ‰«ÂÁ« ”«»‚Î« (ÍËÂ «‰ÍËÂ ·‚◊)
+    // √Ö√ê√á √á√§√•√£√á√°√É√â √§√ß√ê√á √á√§√™√®√• √ä√• √á√ì√ä√§√á√•√ß√á √ì√á√à√¢√´√á (√™√®√• √á√§√™√®√• √°√¢√ó)
     const claimed = !localStorage.getItem("daily-reward") && (i === streak - 1);
     if (claimed) card.classList.add("selected");
 
@@ -289,7 +289,7 @@ lottie.loadAnimation({
   renderer: 'svg',
   loop: true,
   autoplay: true,
-  path: 'gift.json' // Â”«— Â‰· JSON «‰Œ«’ »„
+  path: 'gift.json' // √•√ì√á√ë √•√§√° JSON √á√§√é√á√ï √à√£
 });
 
 
@@ -305,10 +305,10 @@ function moveBoxAnywhere() {
   box.style.top = `${randY}px`;
 }
 
-// √Ë‰ Õ—„…
+// √É√®√§ √ç√ë√£√â
 moveBoxAnywhere();
 
-// Í Õ—„ „‰ 3.5 ÀË«ÊÌ
+// √™√ä√ç√ë√£ √£√§ 3.5 √ã√®√á√¶√≠
 setInterval(moveBoxAnywhere, 3500);
 
 
@@ -340,7 +340,7 @@ const spinButton = document.getElementById("spin-button");
 const watchAdBtn = document.getElementById("watch-ad-btn");
 const spinsLeftLabel = document.getElementById("spins-left");
 
-//  ÃË«∆“ «‰ŸÃ‰… Ë Ë“ÍŸÁ« Õ”» «‰Ë“Ê («Õ Â«‰« „)
+//  √å√®√á√Ü√í √á√§√ô√å√§√â √®√ä√®√í√™√ô√ß√á √ç√ì√à √á√§√®√í√¶ (√á√ç√ä√•√á√§√á√ä√£)
 const prizes = [
   { label: " 100 pts", weight: 0.5 },
   { label: " 50 pts", weight: 1 },
@@ -352,7 +352,7 @@ const prizes = [
   { label: " Nothing", weight: 55 }
 ];
 
-//   œËÍ— ÂË“ËÊ Õ”» «‰«Õ Â«‰« 
+//  √ä√è√®√™√ë √•√®√í√®√¶ √ç√ì√à √á√§√á√ç√ä√•√á√§√á√ä
 function getWeightedRandom() {
   const totalWeight = prizes.reduce((acc, p) => acc + p.weight, 0);
   let rand = Math.random() * totalWeight;
@@ -363,7 +363,7 @@ function getWeightedRandom() {
   return 0;
 }
 
-//  —”Â «‰ŸÃ‰…
+//  √ë√ì√• √á√§√ô√å√§√â
 function drawWheel() {
   const center = canvas.width / 2;
   const arc = (2 * Math.PI) / prizes.length;
@@ -372,14 +372,14 @@ function drawWheel() {
     const end = start + arc;
     ctx.beginPath();
    const colors = [
-  "#4DD0E1", // ·Í—Ë“Í ·« Õ
-  "#FF4500", // »— ‚«‰Í Ê«—Í
-  "#4CAF50", // √Œ÷— ÊŸÊ«ŸÍ
-  "#2196F3", // √“—‚ ”Â«ËÍ
-  "#FF69B4", // Ë—œÍ ‚ËÍ
-  "#9C27B0", // »Ê·”ÃÍ Â‰„Í
-  "#00BCD4", // ”Â«ËÍ Ê‚Í
-  "#F06292"  // Ë—œÍ »«Á  ‰◊Í·
+  "#4DD0E1", // √°√™√ë√®√í√™ √°√á√ä√ç
+  "#FF4500", // √à√ë√ä√¢√á√§√™ √¶√á√ë√™
+  "#4CAF50", // √É√é√ñ√ë √¶√ô√¶√á√ô√™
+  "#2196F3", // √É√í√ë√¢ √ì√•√á√®√™
+  "#FF69B4", // √®√ë√è√™ √¢√®√™
+  "#9C27B0", // √à√¶√°√ì√å√™ √•√§√£√™
+  "#00BCD4", // √ì√•√á√®√™ √¶√¢√™
+  "#F06292"  // √®√ë√è√™ √à√á√ß√ä √§√ó√™√°
 ];
 
 ctx.fillStyle = colors[i % colors.length];
@@ -410,7 +410,7 @@ ctx.fillText("SPIN", center, center + 4);
 
 drawWheel();
 
-//  «‰ œËÍ— «‰ÂÕœËœ ÍËÂÍÎ«
+//  √á√§√ä√è√®√™√ë √á√§√•√ç√è√®√è √™√®√•√™√´√á
 let spinsToday = 0;
 let adSpinsUsed = 0;
 const baseSpins = 5;
@@ -499,7 +499,7 @@ function spinWheel() {
             showToast(" Boost activated!");
             addActivity("boost", "Spin");
 
-            //   ‘⁄Í‰ «‰’«—ËŒ
+            //  √ä√î√ö√™√§ √á√§√ï√á√ë√®√é
             const rocket = document.getElementById("rocket");
             if (rocket) {
               rocket.classList.add("rocket-boosted", "fly");
@@ -550,8 +550,8 @@ function closeWheel() {
   document.getElementById("wheel-overlay").style.display = "none";
 }
 
-// Ê—»◊ «‰√Õœ«À »Ÿœ  ÕÂÍ‰ «‰’·Õ…
-// »Ÿœ  ÕÂÍ‰ «‰’·Õ…
+// √¶√ë√à√ó √á√§√É√ç√è√á√ã √à√ô√è √ä√ç√•√™√§ √á√§√ï√°√ç√â
+// √à√ô√è √ä√ç√•√™√§ √á√§√ï√°√ç√â
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("spin-button").addEventListener("click", openWheel);
   document.getElementById("real-spin-button").addEventListener("click", spinWheel);
@@ -607,7 +607,7 @@ function addActivity(type, value) {
 
   const message = descriptions[type] || `${type} +${value}`;
 
-  //  œÂÃ Tap reward ·Í «‰”◊— «‰√Ë‰ ·‚◊
+  //  √è√•√å Tap reward √°√™ √á√§√ì√ó√ë √á√§√É√®√§ √°√¢√ó
   if (
     type === "tap" &&
     activityLog.length > 0 &&
@@ -655,7 +655,7 @@ function updateActivityList(entries) {
   const container = document.getElementById("activity-list");
   const emptyMsg = document.getElementById("empty-message");
 
-  // ≈“«‰… „‰ «‰ŸÊ«’— «‰”«»‚…
+  // √Ö√í√á√§√â √£√§ √á√§√ô√¶√á√ï√ë √á√§√ì√á√à√¢√â
   container.querySelectorAll(".activity-item").forEach(e => e.remove());
 
   if (!entries || entries.length === 0) {
@@ -673,7 +673,7 @@ function updateActivityList(entries) {
 
 
 document.getElementById("spin-image-button").addEventListener("click", () => {
-  spinWheel(); //   œË— «‰ŸÃ‰… ·‚◊
+  spinWheel(); //  √ä√è√®√ë √á√§√ô√å√§√â √°√¢√ó
 });
 
 
@@ -686,8 +686,8 @@ function openAdModal(purpose = null, button = null) {
     return;
   }
 
-  adPurpose = purpose; //  ÊÕ·ÿ Á‰ «‰÷⁄◊ ÂÊ √Ã‰ spin √Ë boost
-  lastBoostButton = button; // ÊÕ ·ÿ »“— boost «‰ÂÕœœ
+  adPurpose = purpose; //  √¶√ç√°√ò √ß√§ √á√§√ñ√ö√ó √•√¶ √É√å√§ spin √É√® boost
+  lastBoostButton = button; // √¶√ç√ä√°√ò √à√í√ë boost √á√§√•√ç√è√è
 
   const modal = document.getElementById("ad-modal");
   const countdownEl = document.getElementById("ad-countdown");
@@ -695,7 +695,7 @@ function openAdModal(purpose = null, button = null) {
   const closeBtn = document.getElementById("close-ad-btn");
 
   let countdown = 10;
-  countdownEl.style.display = "none"; //  ÍŒ·Í «‰Ê’ «‰—‚ÂÍ
+  countdownEl.style.display = "none"; //  √™√é√°√™ √á√§√¶√ï √á√§√ë√¢√•√™
   modal.style.display = "flex";
   closeBtn.style.display = "none";
   messageEl.style.display = "block";
@@ -760,67 +760,61 @@ const messageEl = document.getElementById("ad-message");
 const closeBtn = document.getElementById("close-ad-btn");
 
 
-
-
-
-
-
 function showAd() {
   const modal = document.getElementById("ad-modal");
   const messageEl = document.getElementById("ad-message");
   const closeBtn = document.getElementById("close-ad-btn");
 
+  // ÿπÿ±ÿ∂ ÿßŸÑÿ∑ÿ®ŸÇÿ© ÿßŸÑÿÆŸÑŸÅŸäÿ©
   modal.style.display = "flex";
-  messageEl.textContent = " Loading your ad...";
+  messageEl.textContent = "üöÄ Loading your ad...";
   closeBtn.style.display = "none";
 
-  function showAd() {
-  const overlay = document.getElementById("ad-overlay");
-  const messageEl = document.getElementById("ad-message");
-  const closeBtn = document.getElementById("ad-close-btn");
-
-  overlay.style.display = "flex";
-  messageEl.textContent = " Loading your ad...";
-  closeBtn.style.display = "none";
-
+  // ÿ™ÿ¥ÿ∫ŸäŸÑ ÿ•ÿπŸÑÿßŸÜ AdsGram
   AdController.show()
     .then((result) => {
       if (result.done) {
-        messageEl.textContent = " Ad complete! Tap to claim your reward.";
-        closeBtn.textContent = " Claim Reward";
+        messageEl.textContent = "üéâ Ad finished! Tap to claim your reward.";
+        closeBtn.textContent = "üéÅ Claim Reward";
         closeBtn.style.display = "inline-block";
 
         closeBtn.onclick = () => {
-          overlay.style.display = "none";
+          modal.style.display = "none";
+
           if (adPurpose === "spin") {
             adSpinsUsed++;
             saveSpinData();
             updateSpinsUI();
-            showToast(" +1 spin added!");
+            showToast("üéØ +1 spin added!");
           } else if (adPurpose === "boost") {
             activateBoost("Ad", lastBoostButton);
             addActivity("boost", "Ad");
           }
+
           adPurpose = null;
           lastBoostButton = null;
         };
       } else {
-        messageEl.textContent = " Ad skipped. Exit without reward?";
-        closeBtn.textContent = " Close";
+        messageEl.textContent = "‚ö†Ô∏è Ad skipped or closed. Exit?";
+        closeBtn.textContent = "‚úñ Close";
         closeBtn.style.display = "inline-block";
+
         closeBtn.onclick = () => {
-          const confirmExit = confirm("Are you sure you want to exit without reward?");
+          const confirmExit = confirm("Are you sure? You won't receive the reward if you exit now.");
           if (confirmExit) {
-            overlay.style.display = "none";
-            showToast(" No reward given.");
+            modal.style.display = "none";
+            showToast("‚ùå No reward granted.");
             adPurpose = null;
             lastBoostButton = null;
           }
         };
       }
     })
-    .catch(() => {
-      overlay.style.display = "none";
-      showToast(" Failed to load ad.");
+    .catch((err) => {
+      modal.style.display = "none";
+      console.warn("Ad Error:", err);
+      showToast("‚ùå Failed to load ad.");
+      adPurpose = null;
+      lastBoostButton = null;
     });
 }
