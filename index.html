@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#ff0040">
+    <title>WWIII Meme Coin - Panic Responsibly</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sound Control Panel -->
+    <div class="sound-control" id="soundControl">
+        <button class="sound-toggle" id="soundToggle">
+            <i class="fas fa-volume-up"></i>
+        </button>
+        <div class="sound-slider">
+            <input type="range" id="volumeSlider" min="0" max="100" value="30">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-rocket"></i>
+                <span>WWIII</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="paper.html" class="nav-link">Whitepaper</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#utility" class="nav-link">Utility</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <div class="nav-social">
+                <a href="https://x.com/wwiiimemecoin" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://t.me/ww3memecoin1" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="paper.html" class="social-link"><i class="fas fa-file-alt"></i></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="radar-sweep"></div>
+            <div class="warning-grid"></div>
+        </div>
+        
+        <div class="missile-container" id="missileContainer"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>MEME TOKEN ALERT</span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="title-main">WWIII</span>
+                <span class="title-sub">Meme Coin</span>
+            </h1>
+            
+            <p class="hero-description">
+                The meme token that triggers every time someone screams "WWIII is starting!" 
+                Press the button. Panic responsibly.
+            </p>
+            
+            <button class="panic-button" id="panicButton">
+                <div class="button-inner">
+                    <i class="fas fa-bomb"></i>
+                    <span>PANIC BUTTON</span>
+                    <div class="button-glow"></div>
+                </div>
+            </button>
+            
+            <div class="buy-section">
+                <button class="buy-button" id="buyButton">
+                    <div class="button-inner">
+                        <i class="fas fa-rocket"></i>
+                        <span>BUY WWIII</span>
+                        <div class="button-glow"></div>
+                    </div>
+                </button>
+                
+                <div class="contract-section">
+                    <div class="contract-address">
+                        <span class="contract-label">Contract:</span>
+                        <span class="contract-value" id="contractAddress">7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU</span>
+                        <button class="copy-button" id="copyContract" title="Copy Contract Address">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="copy-feedback" id="copyFeedback">
+                        <i class="fas fa-check"></i>
+                        <span>Copied!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <span class="stat-number" data-target="1337">0</span>
+                    <span class="stat-label">Panicers</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-fire"></i>
+                    <span class="stat-number" data-target="42069">0</span>
+                    <span class="stat-label">Memes Created</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Moon %</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How to Spread the Panic</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3>Spread the Panic</h3>
+                    <p>Tweet "WWIII is coming", shout it in Discord, or whisper it to your houseplants. Panic fuels the chain.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <h3>Watch the Missiles</h3>
+                    <p>Sound the sirens. Watch the sticker missiles rain down. Every click brings us closer to memetic meltdown.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Get WWIII Coin</h3>
+                    <p>When the world panics, you're early. Grab your bag and ride the sirens to the moon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Us</h2>
+                    <p class="about-description">
+                        WWIII Coin was born out of chaos, memes, and the desire to tokenize global panic. 
+                        We're not here to save the world — we're here to monetize its meltdowns.
+                    </p>
+                    <p class="about-description">
+                        Created by a team of internet renegades, satellite signal sniffers, and certified memeologists, 
+                        WWIII Coin operates on the Solana chain to ensure instant panic propagation with minimal fees.
+                    </p>
+                    <div class="mission-box">
+                        <h3>Our Mission</h3>
+                        <p>Simple: When the sirens start, we pump.</p>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="bunker">
+                        <div class="bunker-door">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="bunker-radar">
+                            <div class="radar-screen"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Utility Section -->
+    <section id="utility" class="utility">
+        <div class="container">
+            <h2 class="section-title">Utility</h2>
+            <div class="utility-grid">
+                <div class="utility-card">
+                    <div class="utility-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Hold to Unlock</h3>
+                    <p>Exclusive WWIII content becomes available only to $WWIII holders. Open the bunker door... if you dare.</p>
+                </div>
+                
+                <div class="utility-card">
+                    <div class="utility-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Telegram Bot Access</h3>
+                    <p>Token holders get access to a meme-powered bot that posts daily "WWIII threat levels" and absurd war forecasts.</p>
+                </div>
+                
+                <div class="utility-card">
+                    <div class="utility-icon">
+                        <i class="fas fa-vote-yea"></i>
+                    </div>
+                    <h3>Meme Governance</h3>
+                    <p>Vote on future memes, new utilities, and community directions. The frontlines of creativity are yours.</p>
+                </div>
+                
+                <div class="utility-card">
+                    <div class="utility-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>WWIII Survival Game (Soon)</h3>
+                    <p>A lightweight browser game where only token holders can play... survive with memes or perish in radiation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is WWIII Coin?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>WWIII Coin is a meme token on the Solana blockchain that capitalizes on global panic and the inevitable "WWIII is starting" memes that circulate online.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I buy WWIII Coin?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can purchase WWIII Coin through various Solana DEXs. Make sure to set slippage high enough during periods of maximum panic.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is this a serious investment?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely not. This is a meme coin for entertainment purposes only. Do not invest more than you're willing to lose in the apocalypse.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What makes WWIII Coin different?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We're the only meme coin that literally benefits from global panic. The more chaos in the world, the more memes we create. It's the perfect hedge against sanity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-rocket"></i>
+                        <span>WWIII</span>
+                    </div>
+                    <p>Panic Responsibly</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="paper.html">Whitepaper</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#utility">Utility</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Whitepaper</a></li>
+                            <li><a href="#">Solscan</a></li>
+                            <li><a href="#">Contract</a></li>
+                            <li><a href="#">Roadmap</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="https://x.com/wwiiimemecoin" target="_blank">Twitter</a></li>
+                            <li><a href="https://t.me/ww3memecoin1" target="_blank">Telegram</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Whitepaper</a></li>
+                            <li><a href="#">Solscan</a></li>
+                            <li><a href="#">Contract</a></li>
+                            <li><a href="#">Roadmap</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Join the Panic</h4>
+                    <div class="social-icons">
+                        <a href="https://x.com/wwiiimemecoin" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://t.me/ww3memecoin1" class="social-icon" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 WWIII Meme Coin. All rights Reserved. Do not take seriously.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="sounds.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

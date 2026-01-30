@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#ff0040">
+    <title>WWIII Meme Coin - Whitepaper</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Paper-specific styles */
+        .paper-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(10, 10, 10, 0.95);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 0, 64, 0.3);
+            box-shadow: 0 20px 60px rgba(255, 0, 64, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .paper-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255, 0, 64, 0.3);
+        }
+
+        .paper-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 0, 64, 0.5);
+        }
+
+        .paper-subtitle {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            margin-bottom: 20px;
+        }
+
+        .paper-content {
+            color: var(--light-text);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .paper-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 0, 64, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 0, 64, 0.2);
+        }
+
+        .paper-section h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .paper-section h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .paper-section p {
+            margin-bottom: 15px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .paper-section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .paper-section li {
+            margin-bottom: 10px;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tokenomics-item {
+            background: rgba(255, 0, 64, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 0, 64, 0.3);
+        }
+
+        .tokenomics-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-family: 'Orbitron', monospace;
+        }
+
+        .tokenomics-item p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .social-section {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 0, 64, 0.1);
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 2px solid rgba(255, 0, 64, 0.3);
+        }
+
+        .social-section h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-family: 'Orbitron', monospace;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 0, 64, 0.3);
+        }
+
+        .social-link i {
+            font-size: 1.2rem;
+        }
+
+        .warning-box {
+            background: rgba(255, 204, 0, 0.1);
+            border: 2px solid var(--warning-yellow);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .warning-box h3 {
+            color: var(--warning-yellow);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-box p {
+            color: var(--light-text);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: transparent;
+            color: var(--primary-color);
+            text-decoration: none;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            font-weight: bold;
+            font-family: 'Orbitron', monospace;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .back-button:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .paper-container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .paper-title {
+                font-size: 2rem;
+            }
+
+            .paper-section {
+                padding: 20px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-rocket"></i>
+                <span>WWIII</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="paper.html" class="nav-link">Whitepaper</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#utility" class="nav-link">Utility</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <div class="nav-social">
+                <a href="https://x.com/wwiiimemecoin" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://t.me/ww3memecoin1" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="social-link"><i class="fas fa-file-alt"></i></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Paper Content -->
+    <section class="paper">
+        <div class="container">
+            <div class="paper-container">
+                <a href="index.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+
+                <div class="paper-header">
+                    <h1 class="paper-title">WWIII Meme Coin</h1>
+                    <p class="paper-subtitle">Whitepaper v1.0</p>
+                    <p class="paper-subtitle">Panic Responsibly • Tokenize Global Chaos</p>
+                </div>
+
+                <div class="paper-content">
+                    <div class="paper-section">
+                        <h2>🎯 Executive Summary</h2>
+                        <p>WWIII Meme Coin is a revolutionary cryptocurrency that capitalizes on the inevitable cycle of global panic and the "WWIII is starting" meme phenomenon. Built on the Solana blockchain for maximum speed and minimal fees, WWIII Coin transforms global anxiety into memetic value.</p>
+                        <p>Our mission is simple: create the ultimate hedge against sanity, providing entertainment value while documenting the perpetual cycle of internet panic through blockchain technology.</p>
+                    </div>
+
+                    <div class="paper-section">
+                        <h2>🚀 Project Vision</h2>
+                        <p>In an era where every geopolitical event triggers waves of "WWIII is starting" memes, we recognized an opportunity to tokenize this universal human experience. WWIII Coin serves as both a social commentary and a community-driven meme ecosystem.</p>
+                        
+                        <h3>Core Principles:</h3>
+                        <ul>
+                            <li><strong>Transparency:</strong> Every panic, every meme, every transaction recorded on-chain</li>
+                            <li><strong>Community:</strong> Built by the community, for the community</li>
+                            <li><strong>Entertainment:</strong> First and foremost, we're here for the memes</li>
+                            <li><strong>Accessibility:</strong> Low barrier to entry, zero taxes on transactions</li>
+                        </ul>
+                    </div>
+
+                    <div class="paper-section">
+                        <h2>💰 Tokenomics</h2>
+                        <div class="tokenomics-grid">
+                            <div class="tokenomics-item">
+                                <h4>Total Supply</h4>
+                                <p>1,000,000,000</p>
+                            </div>
+                            <div class="tokenomics-item">
+                                <h4>Circulating Supply</h4>
+                                <p>500,000,000</p>
+                            </div>
+                            <div class="tokenomics-item">
+                                <h4>Buy/Sell Tax</h4>
+                                <p>0%</p>
+                            </div>
+                            <div class="tokenomics-item">
+                                <h4>Liquidity</h4>
+                                <p>100% Locked</p>
+                            </div>
+                        </div>
+
+                        <h3>Distribution:</h3>
+                        <ul>
+                            <li><strong>50% Community Airdrop:</strong> Distributed to active Solana users and early adopters</li>
+                            <li><strong>30% Liquidity Pool:</strong> Permanently locked on Raydium</li>
+                            <li><strong>15% Development:</strong> Team tokens (vested over 12 months)</li>
+                            <li><strong>5% Marketing:</strong> Community growth and partnerships</li>
+                        </ul>
+                    </div>
+
+                    <div class="paper-section">
+                        <h2>⚡ Technology</h2>
+                        <p>WWIII Coin is built on the Solana blockchain, leveraging:</p>
+                        <ul>
+                            <li><strong>Lightning-Fast Transactions:</strong> 65,000+ TPS capacity</li>
+                            <li><strong>Minimal Fees:</strong> Average transaction cost under $0.001</li>
+                            <li><strong>Scalability:</strong> Built for mass adoption and meme warfare</li>
+                            <li><strong>Security:</strong> Audited smart contracts and locked liquidity</li>
+                        </ul>
+
+                        <h3>Contract Details:</h3>
+                        <ul>
+                            <li><strong>Network:</strong> Solana Mainnet</li>
+                            <li><strong>Token Standard:</strong> SPL Token</li>
+                            <li><strong>Decimals:</strong> 9</li>
+                            <li><strong>Liquidity:</strong> Raydium AMM</li>
+                        </ul>
+                    </div>
+
+                    <div class="paper-section">
+                        <h2>🎮 Utility & Features</h2>
+                        <p>While primarily a meme coin, WWIII offers several utility features:</p>
+                        
+                        <h3>Core Utilities:</h3>
+                        <ul>
+                            <li><strong>Panic Button DApp:</strong> Interactive panic button that triggers on-chain events</li>
+                            <li><strong>Meme Governance:</strong> Token holders vote on future memes and project direction</li>
+                            <li><strong>Exclusive Content:</strong> Holder-only access to premium meme content and analysis</li>
+                            <li><strong>Telegram Bot:</strong> Automated "WWIII threat level" notifications and meme alerts</li>
+                            <li><strong>NFT Collection:</strong> Limited edition panic-themed digital collectibles</li>
+                        </ul>
+
+                        <h3>Gaming Integration:</h3>
+                        <p>Upcoming WWIII Survival Game where token holders can:</p>
+                        <ul>
+                            <li>Compete in meme battles</li>
+                            <li>Earn rewards for panic predictions</li>
+                            <li>Access exclusive game modes</li>
+                        </ul>
+                    </div>
+
+                    <div class="paper-section">
+                        <h2>📊 Roadmap</h2>
+                        
+                        <h3>Phase 1: Launch ✅</h3>
+                        <ul>
+                            <li>Token launch on Solana</li>
+                            <li>Liquidity pool creation</li>
+                            <li>Initial community building</li>
+                            <li>Panic button DApp deployment</li>
+                        </ul>
+
+                        <h3>Phase 2: Growth (Current)</h3>
+                        <ul>
+                            <li>Exchange listings</li>
+                            <li>Partnership development</li>
+                            <li>Telegram bot launch</li>
+                            <li>Marketing campaigns</li>
+                        </ul>
+
+                        <h3>Phase 3: Expansion</h3>
+                        <ul>
+                            <li>NFT collection launch</li>
+                            <li>Gaming platform development</li>
+                            <li>DAO implementation</li>
+                            <li>Cross-chain expansion</li>
+                        </ul>
+
+                        <h3>Phase 4: Domination</h3>
+                        <ul>
+                            <li>Global meme dominance</li>
+                            <li>Advanced gaming features</li>
+                            <li>Metaverse integration</li>
+                            <li>World peace (just kidding)</li>
+                        </ul>
+                    </div>
+
+                    <div class="warning-box">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Disclaimer</h3>
+                        <p>WWIII Meme Coin is created for entertainment purposes only. This is not financial advice. The cryptocurrency market is highly volatile, and meme coins carry significant risk. Never invest more than you're willing to lose in the apocalypse. Do your own research and panic responsibly.</p>
+                    </div>
+
+                    <div class="social-section">
+                        <h2>🔗 Join the Panic</h2>
+                        <p style="margin-bottom: 30px; color: var(--gray-text);">
+                            Connect with our community and stay updated on the latest panic developments
+                        </p>
+                        
+                        <div class="buy-section" style="margin-bottom: 40px;">
+                            <button class="buy-button" id="buyButton">
+                                <div class="button-inner">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>BUY WWIII</span>
+                                    <div class="button-glow"></div>
+                                </div>
+                            </button>
+                            
+                            <div class="contract-section">
+                                <div class="contract-address">
+                                    <span class="contract-label">Contract:</span>
+                                    <span class="contract-value" id="contractAddress">7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU</span>
+                                    <button class="copy-button" id="copyContract" title="Copy Contract Address">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="copy-feedback" id="copyFeedback">
+                                    <i class="fas fa-check"></i>
+                                    <span>Copied!</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://x.com/wwiiimemecoin" class="social-link" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                                Twitter / X
+                            </a>
+                            <a href="https://t.me/ww3memecoin1" class="social-link" target="_blank">
+                                <i class="fab fa-telegram"></i>
+                                Telegram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-rocket"></i>
+                        <span>WWIII</span>
+                    </div>
+                    <p>Panic Responsibly</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="paper.html">Whitepaper</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#utility">Utility</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="https://x.com/wwiiimemecoin" target="_blank">Twitter</a></li>
+                            <li><a href="https://t.me/ww3memecoin1" target="_blank">Telegram</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="https://x.com/wwiiimemecoin" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://t.me/ww3memecoin1" class="social-icon" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 WWIII Meme Coin. All rights Reserved. Do not take seriously.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Buy Button Functionality for Paper Page
+        document.addEventListener('DOMContentLoaded', function() {
+            const buyButton = document.getElementById('buyButton');
+            const copyContract = document.getElementById('copyContract');
+            const contractAddress = document.getElementById('contractAddress');
+            const copyFeedback = document.getElementById('copyFeedback');
+            
+            // Buy Button Click
+            if (buyButton) {
+                buyButton.addEventListener('click', function() {
+                    // Add button animation
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 100);
+                    
+                    // Open Solana DEX (Raydium) in new tab
+                    const raydiumUrl = `https://raydium.io/swap/?inputMint=sol&outputMint=${contractAddress.textContent}`;
+                    window.open(raydiumUrl, '_blank');
+                });
+            }
+            
+            // Copy Contract Address Functionality
+            if (copyContract) {
+                copyContract.addEventListener('click', async function() {
+                    try {
+                        // Copy to clipboard
+                        await navigator.clipboard.writeText(contractAddress.textContent);
+                        
+                        // Show feedback
+                        copyFeedback.classList.add('show');
+                        
+                        // Hide feedback after 2 seconds
+                        setTimeout(() => {
+                            copyFeedback.classList.remove('show');
+                        }, 2000);
+                        
+                        console.log('Contract address copied to clipboard');
+                    } catch (err) {
+                        console.error('Failed to copy contract address:', err);
+                        
+                        // Fallback for older browsers
+                        const textArea = document.createElement('textarea');
+                        textArea.value = contractAddress.textContent;
+                        document.body.appendChild(textArea);
+                        textArea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textArea);
+                        
+                        // Show feedback
+                        copyFeedback.classList.add('show');
+                        setTimeout(() => {
+                            copyFeedback.classList.remove('show');
+                        }, 2000);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
