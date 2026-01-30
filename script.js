@@ -412,9 +412,9 @@ buyButton.addEventListener('click', function() {
         this.style.transform = '';
     }, 100);
     
-    // Open Solana DEX (Raydium) in new tab
-    const raydiumUrl = `https://raydium.io/swap/?inputMint=sol&outputMint=${contractAddress.textContent}`;
-    window.open(raydiumUrl, '_blank');
+    // Open PumpFun in new tab
+    const pumpFunUrl = `https://pump.fun/coin/${contractAddress.textContent}`;
+    window.open(pumpFunUrl, '_blank');
 });
 
 // Copy Contract Address Functionality
